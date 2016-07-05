@@ -1,0 +1,77 @@
+                   Clock Frequency Report
+
+	Domain                  Clock Name                            Min Period (Freq)
+	------                  ----------                            -----------------
+	ClockDomain0            clk                                   4.344 (230.203 MHz)  
+-- Device: Altera - Cyclone II : EP2C35F672C : 7
+-- CTE report summary..
+                  CTE Report Summary
+
+End CTE Report Summary ..... CPU Time Used: 0 sec.
+
+Setup Slack Path Summary
+
+               Data                                                                                                                              Data
+       Setup   Path   Source  Dest.                                                                                                              End 
+Index  Slack   Delay  Clock   Clock                     Data Start Pin                                         Data End Pin                      Edge
+-----  ------  -----  ------  -----  ----------------------------------------------------  ----------------------------------------------------  ----
+  1    -0.344  3.764  clk     clk    u_uw_uart_u_uarts/reg_TxDivisor(5)/clk                u_uw_uart_u_uarts/modgen_counter_RxDiv/reg_q(9)/sclr  Rise
+  2    -0.301  3.721  clk     clk    u_uw_uart_u_uarts/modgen_counter_RxDiv/reg_q(7)/clk   u_uw_uart_u_uarts/modgen_counter_RxDiv/reg_q(9)/sclr  Rise
+  3    -0.301  3.721  clk     clk    u_uw_uart_u_uarts/modgen_counter_RxDiv/reg_q(10)/clk  u_uw_uart_u_uarts/modgen_counter_RxDiv/reg_q(9)/sclr  Rise
+  4    -0.278  3.698  clk     clk    u_uw_uart_u_uarts/modgen_counter_RxDiv/reg_q(6)/clk   u_uw_uart_u_uarts/modgen_counter_RxDiv/reg_q(9)/sclr  Rise
+  5    -0.101  3.521  clk     clk    u_uw_uart_u_uarts/modgen_counter_RxDiv/reg_q(3)/clk   u_uw_uart_u_uarts/modgen_counter_RxDiv/reg_q(9)/sclr  Rise
+  6    -0.101  3.521  clk     clk    u_uw_uart_u_uarts/modgen_counter_RxDiv/reg_q(9)/clk   u_uw_uart_u_uarts/modgen_counter_RxDiv/reg_q(9)/sclr  Rise
+  7    -0.078  3.498  clk     clk    u_uw_uart_u_uarts/modgen_counter_RxDiv/reg_q(5)/clk   u_uw_uart_u_uarts/modgen_counter_RxDiv/reg_q(9)/sclr  Rise
+  8    -0.078  3.498  clk     clk    u_uw_uart_u_uarts/modgen_counter_RxDiv/reg_q(2)/clk   u_uw_uart_u_uarts/modgen_counter_RxDiv/reg_q(9)/sclr  Rise
+  9     0.043  3.377  clk     clk    u_uw_uart_u_uarts/modgen_counter_RxDiv/reg_q(8)/clk   u_uw_uart_u_uarts/modgen_counter_RxDiv/reg_q(9)/sclr  Rise
+ 10     0.066  3.354  clk     clk    u_uw_uart_u_uarts/modgen_counter_RxDiv/reg_q(4)/clk   u_uw_uart_u_uarts/modgen_counter_RxDiv/reg_q(9)/sclr  Rise
+
+-- Device: Altera - Cyclone II : EP2C35F672C : 7
+-- CTE report summary..
+                  CTE Report Summary
+
+Analyzing setup constraint violations 
+End CTE Report Summary ..... CPU Time Used: 0 sec.
+-- Device: Altera - Cyclone II : EP2C35F672C : 7
+-- CTE report timing..
+                  CTE Path Report
+
+
+Critical path #1, (path slack = -0.344):
+
+SOURCE CLOCK: name: clk period: 4.000000
+     Times are relative to the 1st rising edge
+  DEST CLOCK: name: clk period: 4.000000
+     Times are relative to the 2nd rising edge
+
+NAME                                                    GATE                     DELAY    ARRIVAL DIR  FANOUT
+u_uw_uart_u_uarts/reg_TxDivisor(5)/clk               cycloneii_lcell_ff                   0.000   up
+u_uw_uart_u_uarts/reg_TxDivisor(5)/regout            cycloneii_lcell_ff         0.000     0.000   up
+u_uw_uart_u_uarts/TxDivisor(5)                       (net)                      0.330                   4
+u_uw_uart_u_uarts/ix34394z52927/dataa                cycloneii_lcell_comb                 0.330   up
+u_uw_uart_u_uarts/ix34394z52927/combout              cycloneii_lcell_comb       0.545     0.875   up
+u_uw_uart_u_uarts/nx34394z6                          (net)                      0.270                   1
+u_uw_uart_u_uarts/ix34394z52926/dataa                cycloneii_lcell_comb                 1.145   up
+u_uw_uart_u_uarts/ix34394z52926/combout              cycloneii_lcell_comb       0.545     1.690   up
+u_uw_uart_u_uarts/nx34394z5                          (net)                      0.270                   1
+u_uw_uart_u_uarts/ix34394z52924/datab                cycloneii_lcell_comb                 1.960   up
+u_uw_uart_u_uarts/ix34394z52924/combout              cycloneii_lcell_comb       0.522     2.482   up
+u_uw_uart_u_uarts/nx34394z3                          (net)                      0.290                   2
+u_uw_uart_u_uarts/ix65151z52923/datab                cycloneii_lcell_comb                 2.772   up
+u_uw_uart_u_uarts/ix65151z52923/combout              cycloneii_lcell_comb       0.522     3.294   up
+u_uw_uart_u_uarts/nx65151z1                          (net)                      0.470                  11
+u_uw_uart_u_uarts/modgen_counter_RxDiv/reg_q(9)/sclr cycloneii_lcell_ff                   3.764   up
+
+		Initial edge separation:      4.000
+		Source clock delay:      -    1.383
+		Dest clock delay:        +    1.383
+		                        -----------
+		Edge separation:              4.000
+		Setup constraint:        -    0.580
+		                        -----------
+		Data required time:           3.420
+		Data arrival time:       -    3.764   ( 56.70% cell delay, 43.30% net delay )
+		                        -----------
+		Slack (VIOLATED):            -0.344
+
+End CTE Analysis ..... CPU Time Used: 0 sec.

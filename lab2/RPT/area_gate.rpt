@@ -1,0 +1,53 @@
+
+******************************************************************
+
+Library: OPERATORS    Cell: add_15u_15u_15u_0_0    View: INTERFACE
+
+******************************************************************
+
+ Number of ports :                      47
+ Number of nets :                        0
+ Number of instances :                   0
+ Number of references to this view :     1
+
+Total accumulated area : 
+ Black Box add_15u_15u_15u_0_0 :         1
+
+******************************************************************
+
+Library: OPERATORS    Cell: add_16u_16u_16u_0_0    View: INTERFACE
+
+******************************************************************
+
+ Number of ports :                      50
+ Number of nets :                        0
+ Number of instances :                   0
+ Number of references to this view :     2
+
+Total accumulated area : 
+ Black Box add_16u_16u_16u_0_0 :         1
+
+***************************************
+
+Library: work    Cell: fir    View: avg
+
+***************************************
+
+  Cell                  Library  References     Total Area
+
+ DFF                    PRIMITIVES    56 x      1     56 DFF
+ FALSE                  PRIMITIVES     1 x      1      1 FALSE
+ add_15u_15u_15u_0_0    OPERATORS      1 x      1      1 add_15u_15u_15u_0_0
+ add_16u_16u_16u_0_0    OPERATORS      2 x      1      2 add_16u_16u_16u_0_0
+
+ Number of ports :                      33
+ Number of nets :                      119
+ Number of instances :                  60
+ Number of references to this view :     0
+
+Total accumulated area : 
+ Black Box DFF :                        56
+ Black Box FALSE :                       1
+ Black Box add_15u_15u_15u_0_0 :         1
+ Black Box add_16u_16u_16u_0_0 :         2
+ Number of accumulated instances :      60

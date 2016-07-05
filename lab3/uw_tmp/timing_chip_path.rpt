@@ -1,0 +1,399 @@
+----------------
+; Command Info ;
+----------------
+Report Timing: Found 5 setup paths (5 violated).  Worst case slack is -3.089 
+
+Tcl Command:
+    report_timing -setup -file timing_chip_path.rpt -npaths 5 -detail path_only
+
+Options:
+    -setup 
+    -npaths 5 
+    -detail path_only 
+    -file {timing_chip_path.rpt} 
+
+Delay Model:
+    Slow Model
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Summary of Paths                                                                                                                                                                                                                       ;
++--------+---------------------------------------------------------------------------+-----------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                                 ; To Node                                                                     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------------------------------------------------+-----------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -3.089 ; UARTS:u_uw_uart_u_uarts|modgen_counter_11_0:modgen_counter_RxDiv|nx3957z1 ; UARTS:u_uw_uart_u_uarts|modgen_counter_11_0:modgen_counter_RxDiv|nx17096z3  ; clk          ; clk         ; 1.000        ; 0.000      ; 4.127      ;
+; -3.089 ; UARTS:u_uw_uart_u_uarts|modgen_counter_11_0:modgen_counter_RxDiv|nx3957z1 ; UARTS:u_uw_uart_u_uarts|modgen_counter_11_0:modgen_counter_RxDiv|nx17096z5  ; clk          ; clk         ; 1.000        ; 0.000      ; 4.127      ;
+; -3.089 ; UARTS:u_uw_uart_u_uarts|modgen_counter_11_0:modgen_counter_RxDiv|nx3957z1 ; UARTS:u_uw_uart_u_uarts|modgen_counter_11_0:modgen_counter_RxDiv|nx3957z1   ; clk          ; clk         ; 1.000        ; 0.000      ; 4.127      ;
+; -3.089 ; UARTS:u_uw_uart_u_uarts|modgen_counter_11_0:modgen_counter_RxDiv|nx3957z1 ; UARTS:u_uw_uart_u_uarts|modgen_counter_11_0:modgen_counter_RxDiv|nx17096z7  ; clk          ; clk         ; 1.000        ; 0.000      ; 4.127      ;
+; -3.089 ; UARTS:u_uw_uart_u_uarts|modgen_counter_11_0:modgen_counter_RxDiv|nx3957z1 ; UARTS:u_uw_uart_u_uarts|modgen_counter_11_0:modgen_counter_RxDiv|nx17096z11 ; clk          ; clk         ; 1.000        ; 0.000      ; 4.127      ;
++--------+---------------------------------------------------------------------------+-----------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+Path #1: Setup slack is -3.089 (VIOLATED)
+===============================================================================
++-------------------------------------------------------------------------------------------------+
+; Path Summary                                                                                    ;
++--------------------+----------------------------------------------------------------------------+
+; Property           ; Value                                                                      ;
++--------------------+----------------------------------------------------------------------------+
+; From Node          ; UARTS:u_uw_uart_u_uarts|modgen_counter_11_0:modgen_counter_RxDiv|nx3957z1  ;
+; To Node            ; UARTS:u_uw_uart_u_uarts|modgen_counter_11_0:modgen_counter_RxDiv|nx17096z3 ;
+; Launch Clock       ; clk                                                                        ;
+; Latch Clock        ; clk                                                                        ;
+; Data Arrival Time  ; 7.022                                                                      ;
+; Data Required Time ; 3.933                                                                      ;
+; Slack              ; -3.089 (VIOLATED)                                                          ;
++--------------------+----------------------------------------------------------------------------+
+
++--------------------------------------------------------------------------------------+
+; Statistics                                                                           ;
++---------------------------+-------+-------+-------------+------------+-------+-------+
+; Property                  ; Value ; Count ; Total Delay ; % of Total ; Min   ; Max   ;
++---------------------------+-------+-------+-------------+------------+-------+-------+
+; Setup Relationship        ; 1.000 ;       ;             ;            ;       ;       ;
+; Clock Skew                ; 0.000 ;       ;             ;            ;       ;       ;
+; Data Delay                ; 4.127 ;       ;             ;            ;       ;       ;
+; Number of Logic Levels    ;       ; 4     ;             ;            ;       ;       ;
+; Physical Delays           ;       ;       ;             ;            ;       ;       ;
+;  Arrival Path             ;       ;       ;             ;            ;       ;       ;
+;   Clock                   ;       ;       ;             ;            ;       ;       ;
+;    Clock Network (Lumped) ;       ; 1     ; 2.895       ; 100        ; 2.895 ; 2.895 ;
+;   Data                    ;       ;       ;             ;            ;       ;       ;
+;    IC                     ;       ; 5     ; 1.943       ; 47         ; 0.269 ; 0.612 ;
+;    Cell                   ;       ; 6     ; 1.907       ; 46         ; 0.000 ; 0.580 ;
+;    uTco                   ;       ; 1     ; 0.277       ; 6          ; 0.277 ; 0.277 ;
+;  Required Path            ;       ;       ;             ;            ;       ;       ;
+;   Clock                   ;       ;       ;             ;            ;       ;       ;
+;    Clock Network (Lumped) ;       ; 1     ; 2.895       ; 100        ; 2.895 ; 2.895 ;
++---------------------------+-------+-------+-------------+------------+-------+-------+
+Note: Negative delays are omitted from totals when calculating percentages
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Data Arrival Path                                                                                                                        ;
++---------+---------+----+------+--------+--------------------+----------------------------------------------------------------------------+
+; Total   ; Incr    ; RF ; Type ; Fanout ; Location           ; Element                                                                    ;
++---------+---------+----+------+--------+--------------------+----------------------------------------------------------------------------+
+; 0.000   ; 0.000   ;    ;      ;        ;                    ; launch edge time                                                           ;
+; 2.895   ; 2.895   ;    ;      ;        ;                    ; clock path                                                                 ;
+;   2.895 ;   2.895 ; R  ;      ;        ;                    ; clock network delay                                                        ;
+; 7.022   ; 4.127   ;    ;      ;        ;                    ; data path                                                                  ;
+;   3.172 ;   0.277 ;    ; uTco ; 1      ; LCFF_X47_Y28_N23   ; UARTS:u_uw_uart_u_uarts|modgen_counter_11_0:modgen_counter_RxDiv|nx3957z1  ;
+;   3.172 ;   0.000 ; FF ; CELL ; 3      ; LCFF_X47_Y28_N23   ; u_uw_uart_u_uarts|modgen_counter_RxDiv|reg_q_10_|regout                    ;
+;   3.784 ;   0.612 ; FF ; IC   ; 1      ; LCCOMB_X48_Y28_N30 ; u_uw_uart_u_uarts|ix34394z52927|datab                                      ;
+;   4.234 ;   0.450 ; FR ; CELL ; 1      ; LCCOMB_X48_Y28_N30 ; u_uw_uart_u_uarts|ix34394z52927|combout                                    ;
+;   4.696 ;   0.462 ; RR ; IC   ; 1      ; LCCOMB_X47_Y28_N26 ; u_uw_uart_u_uarts|ix34394z52926|datad                                      ;
+;   4.874 ;   0.178 ; RR ; CELL ; 1      ; LCCOMB_X47_Y28_N26 ; u_uw_uart_u_uarts|ix34394z52926|combout                                    ;
+;   5.172 ;   0.298 ; RR ; IC   ; 1      ; LCCOMB_X47_Y28_N28 ; u_uw_uart_u_uarts|ix34394z52924|datab                                      ;
+;   5.693 ;   0.521 ; RR ; CELL ; 2      ; LCCOMB_X47_Y28_N28 ; u_uw_uart_u_uarts|ix34394z52924|combout                                    ;
+;   5.995 ;   0.302 ; RR ; IC   ; 1      ; LCCOMB_X47_Y28_N30 ; u_uw_uart_u_uarts|ix65151z52923|datad                                      ;
+;   6.173 ;   0.178 ; RR ; CELL ; 11     ; LCCOMB_X47_Y28_N30 ; u_uw_uart_u_uarts|ix65151z52923|combout                                    ;
+;   6.442 ;   0.269 ; RR ; IC   ; 1      ; LCFF_X47_Y28_N21   ; u_uw_uart_u_uarts|modgen_counter_RxDiv|reg_q_9_|sclr                       ;
+;   7.022 ;   0.580 ; RF ; CELL ; 1      ; LCFF_X47_Y28_N21   ; UARTS:u_uw_uart_u_uarts|modgen_counter_11_0:modgen_counter_RxDiv|nx17096z3 ;
++---------+---------+----+------+--------+--------------------+----------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Data Required Path                                                                                                                     ;
++---------+---------+----+------+--------+------------------+----------------------------------------------------------------------------+
+; Total   ; Incr    ; RF ; Type ; Fanout ; Location         ; Element                                                                    ;
++---------+---------+----+------+--------+------------------+----------------------------------------------------------------------------+
+; 1.000   ; 1.000   ;    ;      ;        ;                  ; latch edge time                                                            ;
+; 3.895   ; 2.895   ;    ;      ;        ;                  ; clock path                                                                 ;
+;   3.895 ;   2.895 ; R  ;      ;        ;                  ; clock network delay                                                        ;
+; 3.933   ; 0.038   ;    ; uTsu ; 1      ; LCFF_X47_Y28_N21 ; UARTS:u_uw_uart_u_uarts|modgen_counter_11_0:modgen_counter_RxDiv|nx17096z3 ;
++---------+---------+----+------+--------+------------------+----------------------------------------------------------------------------+
+
+
+Path #2: Setup slack is -3.089 (VIOLATED)
+===============================================================================
++-------------------------------------------------------------------------------------------------+
+; Path Summary                                                                                    ;
++--------------------+----------------------------------------------------------------------------+
+; Property           ; Value                                                                      ;
++--------------------+----------------------------------------------------------------------------+
+; From Node          ; UARTS:u_uw_uart_u_uarts|modgen_counter_11_0:modgen_counter_RxDiv|nx3957z1  ;
+; To Node            ; UARTS:u_uw_uart_u_uarts|modgen_counter_11_0:modgen_counter_RxDiv|nx17096z5 ;
+; Launch Clock       ; clk                                                                        ;
+; Latch Clock        ; clk                                                                        ;
+; Data Arrival Time  ; 7.022                                                                      ;
+; Data Required Time ; 3.933                                                                      ;
+; Slack              ; -3.089 (VIOLATED)                                                          ;
++--------------------+----------------------------------------------------------------------------+
+
++--------------------------------------------------------------------------------------+
+; Statistics                                                                           ;
++---------------------------+-------+-------+-------------+------------+-------+-------+
+; Property                  ; Value ; Count ; Total Delay ; % of Total ; Min   ; Max   ;
++---------------------------+-------+-------+-------------+------------+-------+-------+
+; Setup Relationship        ; 1.000 ;       ;             ;            ;       ;       ;
+; Clock Skew                ; 0.000 ;       ;             ;            ;       ;       ;
+; Data Delay                ; 4.127 ;       ;             ;            ;       ;       ;
+; Number of Logic Levels    ;       ; 4     ;             ;            ;       ;       ;
+; Physical Delays           ;       ;       ;             ;            ;       ;       ;
+;  Arrival Path             ;       ;       ;             ;            ;       ;       ;
+;   Clock                   ;       ;       ;             ;            ;       ;       ;
+;    Clock Network (Lumped) ;       ; 1     ; 2.895       ; 100        ; 2.895 ; 2.895 ;
+;   Data                    ;       ;       ;             ;            ;       ;       ;
+;    IC                     ;       ; 5     ; 1.943       ; 47         ; 0.269 ; 0.612 ;
+;    Cell                   ;       ; 6     ; 1.907       ; 46         ; 0.000 ; 0.580 ;
+;    uTco                   ;       ; 1     ; 0.277       ; 6          ; 0.277 ; 0.277 ;
+;  Required Path            ;       ;       ;             ;            ;       ;       ;
+;   Clock                   ;       ;       ;             ;            ;       ;       ;
+;    Clock Network (Lumped) ;       ; 1     ; 2.895       ; 100        ; 2.895 ; 2.895 ;
++---------------------------+-------+-------+-------------+------------+-------+-------+
+Note: Negative delays are omitted from totals when calculating percentages
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Data Arrival Path                                                                                                                        ;
++---------+---------+----+------+--------+--------------------+----------------------------------------------------------------------------+
+; Total   ; Incr    ; RF ; Type ; Fanout ; Location           ; Element                                                                    ;
++---------+---------+----+------+--------+--------------------+----------------------------------------------------------------------------+
+; 0.000   ; 0.000   ;    ;      ;        ;                    ; launch edge time                                                           ;
+; 2.895   ; 2.895   ;    ;      ;        ;                    ; clock path                                                                 ;
+;   2.895 ;   2.895 ; R  ;      ;        ;                    ; clock network delay                                                        ;
+; 7.022   ; 4.127   ;    ;      ;        ;                    ; data path                                                                  ;
+;   3.172 ;   0.277 ;    ; uTco ; 1      ; LCFF_X47_Y28_N23   ; UARTS:u_uw_uart_u_uarts|modgen_counter_11_0:modgen_counter_RxDiv|nx3957z1  ;
+;   3.172 ;   0.000 ; FF ; CELL ; 3      ; LCFF_X47_Y28_N23   ; u_uw_uart_u_uarts|modgen_counter_RxDiv|reg_q_10_|regout                    ;
+;   3.784 ;   0.612 ; FF ; IC   ; 1      ; LCCOMB_X48_Y28_N30 ; u_uw_uart_u_uarts|ix34394z52927|datab                                      ;
+;   4.234 ;   0.450 ; FR ; CELL ; 1      ; LCCOMB_X48_Y28_N30 ; u_uw_uart_u_uarts|ix34394z52927|combout                                    ;
+;   4.696 ;   0.462 ; RR ; IC   ; 1      ; LCCOMB_X47_Y28_N26 ; u_uw_uart_u_uarts|ix34394z52926|datad                                      ;
+;   4.874 ;   0.178 ; RR ; CELL ; 1      ; LCCOMB_X47_Y28_N26 ; u_uw_uart_u_uarts|ix34394z52926|combout                                    ;
+;   5.172 ;   0.298 ; RR ; IC   ; 1      ; LCCOMB_X47_Y28_N28 ; u_uw_uart_u_uarts|ix34394z52924|datab                                      ;
+;   5.693 ;   0.521 ; RR ; CELL ; 2      ; LCCOMB_X47_Y28_N28 ; u_uw_uart_u_uarts|ix34394z52924|combout                                    ;
+;   5.995 ;   0.302 ; RR ; IC   ; 1      ; LCCOMB_X47_Y28_N30 ; u_uw_uart_u_uarts|ix65151z52923|datad                                      ;
+;   6.173 ;   0.178 ; RR ; CELL ; 11     ; LCCOMB_X47_Y28_N30 ; u_uw_uart_u_uarts|ix65151z52923|combout                                    ;
+;   6.442 ;   0.269 ; RR ; IC   ; 1      ; LCFF_X47_Y28_N19   ; u_uw_uart_u_uarts|modgen_counter_RxDiv|reg_q_8_|sclr                       ;
+;   7.022 ;   0.580 ; RF ; CELL ; 1      ; LCFF_X47_Y28_N19   ; UARTS:u_uw_uart_u_uarts|modgen_counter_11_0:modgen_counter_RxDiv|nx17096z5 ;
++---------+---------+----+------+--------+--------------------+----------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Data Required Path                                                                                                                     ;
++---------+---------+----+------+--------+------------------+----------------------------------------------------------------------------+
+; Total   ; Incr    ; RF ; Type ; Fanout ; Location         ; Element                                                                    ;
++---------+---------+----+------+--------+------------------+----------------------------------------------------------------------------+
+; 1.000   ; 1.000   ;    ;      ;        ;                  ; latch edge time                                                            ;
+; 3.895   ; 2.895   ;    ;      ;        ;                  ; clock path                                                                 ;
+;   3.895 ;   2.895 ; R  ;      ;        ;                  ; clock network delay                                                        ;
+; 3.933   ; 0.038   ;    ; uTsu ; 1      ; LCFF_X47_Y28_N19 ; UARTS:u_uw_uart_u_uarts|modgen_counter_11_0:modgen_counter_RxDiv|nx17096z5 ;
++---------+---------+----+------+--------+------------------+----------------------------------------------------------------------------+
+
+
+Path #3: Setup slack is -3.089 (VIOLATED)
+===============================================================================
++------------------------------------------------------------------------------------------------+
+; Path Summary                                                                                   ;
++--------------------+---------------------------------------------------------------------------+
+; Property           ; Value                                                                     ;
++--------------------+---------------------------------------------------------------------------+
+; From Node          ; UARTS:u_uw_uart_u_uarts|modgen_counter_11_0:modgen_counter_RxDiv|nx3957z1 ;
+; To Node            ; UARTS:u_uw_uart_u_uarts|modgen_counter_11_0:modgen_counter_RxDiv|nx3957z1 ;
+; Launch Clock       ; clk                                                                       ;
+; Latch Clock        ; clk                                                                       ;
+; Data Arrival Time  ; 7.022                                                                     ;
+; Data Required Time ; 3.933                                                                     ;
+; Slack              ; -3.089 (VIOLATED)                                                         ;
++--------------------+---------------------------------------------------------------------------+
+
++--------------------------------------------------------------------------------------+
+; Statistics                                                                           ;
++---------------------------+-------+-------+-------------+------------+-------+-------+
+; Property                  ; Value ; Count ; Total Delay ; % of Total ; Min   ; Max   ;
++---------------------------+-------+-------+-------------+------------+-------+-------+
+; Setup Relationship        ; 1.000 ;       ;             ;            ;       ;       ;
+; Clock Skew                ; 0.000 ;       ;             ;            ;       ;       ;
+; Data Delay                ; 4.127 ;       ;             ;            ;       ;       ;
+; Number of Logic Levels    ;       ; 4     ;             ;            ;       ;       ;
+; Physical Delays           ;       ;       ;             ;            ;       ;       ;
+;  Arrival Path             ;       ;       ;             ;            ;       ;       ;
+;   Clock                   ;       ;       ;             ;            ;       ;       ;
+;    Clock Network (Lumped) ;       ; 1     ; 2.895       ; 100        ; 2.895 ; 2.895 ;
+;   Data                    ;       ;       ;             ;            ;       ;       ;
+;    IC                     ;       ; 5     ; 1.943       ; 47         ; 0.269 ; 0.612 ;
+;    Cell                   ;       ; 6     ; 1.907       ; 46         ; 0.000 ; 0.580 ;
+;    uTco                   ;       ; 1     ; 0.277       ; 6          ; 0.277 ; 0.277 ;
+;  Required Path            ;       ;       ;             ;            ;       ;       ;
+;   Clock                   ;       ;       ;             ;            ;       ;       ;
+;    Clock Network (Lumped) ;       ; 1     ; 2.895       ; 100        ; 2.895 ; 2.895 ;
++---------------------------+-------+-------+-------------+------------+-------+-------+
+Note: Negative delays are omitted from totals when calculating percentages
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Data Arrival Path                                                                                                                       ;
++---------+---------+----+------+--------+--------------------+---------------------------------------------------------------------------+
+; Total   ; Incr    ; RF ; Type ; Fanout ; Location           ; Element                                                                   ;
++---------+---------+----+------+--------+--------------------+---------------------------------------------------------------------------+
+; 0.000   ; 0.000   ;    ;      ;        ;                    ; launch edge time                                                          ;
+; 2.895   ; 2.895   ;    ;      ;        ;                    ; clock path                                                                ;
+;   2.895 ;   2.895 ; R  ;      ;        ;                    ; clock network delay                                                       ;
+; 7.022   ; 4.127   ;    ;      ;        ;                    ; data path                                                                 ;
+;   3.172 ;   0.277 ;    ; uTco ; 1      ; LCFF_X47_Y28_N23   ; UARTS:u_uw_uart_u_uarts|modgen_counter_11_0:modgen_counter_RxDiv|nx3957z1 ;
+;   3.172 ;   0.000 ; FF ; CELL ; 3      ; LCFF_X47_Y28_N23   ; u_uw_uart_u_uarts|modgen_counter_RxDiv|reg_q_10_|regout                   ;
+;   3.784 ;   0.612 ; FF ; IC   ; 1      ; LCCOMB_X48_Y28_N30 ; u_uw_uart_u_uarts|ix34394z52927|datab                                     ;
+;   4.234 ;   0.450 ; FR ; CELL ; 1      ; LCCOMB_X48_Y28_N30 ; u_uw_uart_u_uarts|ix34394z52927|combout                                   ;
+;   4.696 ;   0.462 ; RR ; IC   ; 1      ; LCCOMB_X47_Y28_N26 ; u_uw_uart_u_uarts|ix34394z52926|datad                                     ;
+;   4.874 ;   0.178 ; RR ; CELL ; 1      ; LCCOMB_X47_Y28_N26 ; u_uw_uart_u_uarts|ix34394z52926|combout                                   ;
+;   5.172 ;   0.298 ; RR ; IC   ; 1      ; LCCOMB_X47_Y28_N28 ; u_uw_uart_u_uarts|ix34394z52924|datab                                     ;
+;   5.693 ;   0.521 ; RR ; CELL ; 2      ; LCCOMB_X47_Y28_N28 ; u_uw_uart_u_uarts|ix34394z52924|combout                                   ;
+;   5.995 ;   0.302 ; RR ; IC   ; 1      ; LCCOMB_X47_Y28_N30 ; u_uw_uart_u_uarts|ix65151z52923|datad                                     ;
+;   6.173 ;   0.178 ; RR ; CELL ; 11     ; LCCOMB_X47_Y28_N30 ; u_uw_uart_u_uarts|ix65151z52923|combout                                   ;
+;   6.442 ;   0.269 ; RR ; IC   ; 1      ; LCFF_X47_Y28_N23   ; u_uw_uart_u_uarts|modgen_counter_RxDiv|reg_q_10_|sclr                     ;
+;   7.022 ;   0.580 ; RF ; CELL ; 1      ; LCFF_X47_Y28_N23   ; UARTS:u_uw_uart_u_uarts|modgen_counter_11_0:modgen_counter_RxDiv|nx3957z1 ;
++---------+---------+----+------+--------+--------------------+---------------------------------------------------------------------------+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Data Required Path                                                                                                                    ;
++---------+---------+----+------+--------+------------------+---------------------------------------------------------------------------+
+; Total   ; Incr    ; RF ; Type ; Fanout ; Location         ; Element                                                                   ;
++---------+---------+----+------+--------+------------------+---------------------------------------------------------------------------+
+; 1.000   ; 1.000   ;    ;      ;        ;                  ; latch edge time                                                           ;
+; 3.895   ; 2.895   ;    ;      ;        ;                  ; clock path                                                                ;
+;   3.895 ;   2.895 ; R  ;      ;        ;                  ; clock network delay                                                       ;
+; 3.933   ; 0.038   ;    ; uTsu ; 1      ; LCFF_X47_Y28_N23 ; UARTS:u_uw_uart_u_uarts|modgen_counter_11_0:modgen_counter_RxDiv|nx3957z1 ;
++---------+---------+----+------+--------+------------------+---------------------------------------------------------------------------+
+
+
+Path #4: Setup slack is -3.089 (VIOLATED)
+===============================================================================
++-------------------------------------------------------------------------------------------------+
+; Path Summary                                                                                    ;
++--------------------+----------------------------------------------------------------------------+
+; Property           ; Value                                                                      ;
++--------------------+----------------------------------------------------------------------------+
+; From Node          ; UARTS:u_uw_uart_u_uarts|modgen_counter_11_0:modgen_counter_RxDiv|nx3957z1  ;
+; To Node            ; UARTS:u_uw_uart_u_uarts|modgen_counter_11_0:modgen_counter_RxDiv|nx17096z7 ;
+; Launch Clock       ; clk                                                                        ;
+; Latch Clock        ; clk                                                                        ;
+; Data Arrival Time  ; 7.022                                                                      ;
+; Data Required Time ; 3.933                                                                      ;
+; Slack              ; -3.089 (VIOLATED)                                                          ;
++--------------------+----------------------------------------------------------------------------+
+
++--------------------------------------------------------------------------------------+
+; Statistics                                                                           ;
++---------------------------+-------+-------+-------------+------------+-------+-------+
+; Property                  ; Value ; Count ; Total Delay ; % of Total ; Min   ; Max   ;
++---------------------------+-------+-------+-------------+------------+-------+-------+
+; Setup Relationship        ; 1.000 ;       ;             ;            ;       ;       ;
+; Clock Skew                ; 0.000 ;       ;             ;            ;       ;       ;
+; Data Delay                ; 4.127 ;       ;             ;            ;       ;       ;
+; Number of Logic Levels    ;       ; 4     ;             ;            ;       ;       ;
+; Physical Delays           ;       ;       ;             ;            ;       ;       ;
+;  Arrival Path             ;       ;       ;             ;            ;       ;       ;
+;   Clock                   ;       ;       ;             ;            ;       ;       ;
+;    Clock Network (Lumped) ;       ; 1     ; 2.895       ; 100        ; 2.895 ; 2.895 ;
+;   Data                    ;       ;       ;             ;            ;       ;       ;
+;    IC                     ;       ; 5     ; 1.943       ; 47         ; 0.269 ; 0.612 ;
+;    Cell                   ;       ; 6     ; 1.907       ; 46         ; 0.000 ; 0.580 ;
+;    uTco                   ;       ; 1     ; 0.277       ; 6          ; 0.277 ; 0.277 ;
+;  Required Path            ;       ;       ;             ;            ;       ;       ;
+;   Clock                   ;       ;       ;             ;            ;       ;       ;
+;    Clock Network (Lumped) ;       ; 1     ; 2.895       ; 100        ; 2.895 ; 2.895 ;
++---------------------------+-------+-------+-------------+------------+-------+-------+
+Note: Negative delays are omitted from totals when calculating percentages
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Data Arrival Path                                                                                                                        ;
++---------+---------+----+------+--------+--------------------+----------------------------------------------------------------------------+
+; Total   ; Incr    ; RF ; Type ; Fanout ; Location           ; Element                                                                    ;
++---------+---------+----+------+--------+--------------------+----------------------------------------------------------------------------+
+; 0.000   ; 0.000   ;    ;      ;        ;                    ; launch edge time                                                           ;
+; 2.895   ; 2.895   ;    ;      ;        ;                    ; clock path                                                                 ;
+;   2.895 ;   2.895 ; R  ;      ;        ;                    ; clock network delay                                                        ;
+; 7.022   ; 4.127   ;    ;      ;        ;                    ; data path                                                                  ;
+;   3.172 ;   0.277 ;    ; uTco ; 1      ; LCFF_X47_Y28_N23   ; UARTS:u_uw_uart_u_uarts|modgen_counter_11_0:modgen_counter_RxDiv|nx3957z1  ;
+;   3.172 ;   0.000 ; FF ; CELL ; 3      ; LCFF_X47_Y28_N23   ; u_uw_uart_u_uarts|modgen_counter_RxDiv|reg_q_10_|regout                    ;
+;   3.784 ;   0.612 ; FF ; IC   ; 1      ; LCCOMB_X48_Y28_N30 ; u_uw_uart_u_uarts|ix34394z52927|datab                                      ;
+;   4.234 ;   0.450 ; FR ; CELL ; 1      ; LCCOMB_X48_Y28_N30 ; u_uw_uart_u_uarts|ix34394z52927|combout                                    ;
+;   4.696 ;   0.462 ; RR ; IC   ; 1      ; LCCOMB_X47_Y28_N26 ; u_uw_uart_u_uarts|ix34394z52926|datad                                      ;
+;   4.874 ;   0.178 ; RR ; CELL ; 1      ; LCCOMB_X47_Y28_N26 ; u_uw_uart_u_uarts|ix34394z52926|combout                                    ;
+;   5.172 ;   0.298 ; RR ; IC   ; 1      ; LCCOMB_X47_Y28_N28 ; u_uw_uart_u_uarts|ix34394z52924|datab                                      ;
+;   5.693 ;   0.521 ; RR ; CELL ; 2      ; LCCOMB_X47_Y28_N28 ; u_uw_uart_u_uarts|ix34394z52924|combout                                    ;
+;   5.995 ;   0.302 ; RR ; IC   ; 1      ; LCCOMB_X47_Y28_N30 ; u_uw_uart_u_uarts|ix65151z52923|datad                                      ;
+;   6.173 ;   0.178 ; RR ; CELL ; 11     ; LCCOMB_X47_Y28_N30 ; u_uw_uart_u_uarts|ix65151z52923|combout                                    ;
+;   6.442 ;   0.269 ; RR ; IC   ; 1      ; LCFF_X47_Y28_N17   ; u_uw_uart_u_uarts|modgen_counter_RxDiv|reg_q_7_|sclr                       ;
+;   7.022 ;   0.580 ; RF ; CELL ; 1      ; LCFF_X47_Y28_N17   ; UARTS:u_uw_uart_u_uarts|modgen_counter_11_0:modgen_counter_RxDiv|nx17096z7 ;
++---------+---------+----+------+--------+--------------------+----------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Data Required Path                                                                                                                     ;
++---------+---------+----+------+--------+------------------+----------------------------------------------------------------------------+
+; Total   ; Incr    ; RF ; Type ; Fanout ; Location         ; Element                                                                    ;
++---------+---------+----+------+--------+------------------+----------------------------------------------------------------------------+
+; 1.000   ; 1.000   ;    ;      ;        ;                  ; latch edge time                                                            ;
+; 3.895   ; 2.895   ;    ;      ;        ;                  ; clock path                                                                 ;
+;   3.895 ;   2.895 ; R  ;      ;        ;                  ; clock network delay                                                        ;
+; 3.933   ; 0.038   ;    ; uTsu ; 1      ; LCFF_X47_Y28_N17 ; UARTS:u_uw_uart_u_uarts|modgen_counter_11_0:modgen_counter_RxDiv|nx17096z7 ;
++---------+---------+----+------+--------+------------------+----------------------------------------------------------------------------+
+
+
+Path #5: Setup slack is -3.089 (VIOLATED)
+===============================================================================
++--------------------------------------------------------------------------------------------------+
+; Path Summary                                                                                     ;
++--------------------+-----------------------------------------------------------------------------+
+; Property           ; Value                                                                       ;
++--------------------+-----------------------------------------------------------------------------+
+; From Node          ; UARTS:u_uw_uart_u_uarts|modgen_counter_11_0:modgen_counter_RxDiv|nx3957z1   ;
+; To Node            ; UARTS:u_uw_uart_u_uarts|modgen_counter_11_0:modgen_counter_RxDiv|nx17096z11 ;
+; Launch Clock       ; clk                                                                         ;
+; Latch Clock        ; clk                                                                         ;
+; Data Arrival Time  ; 7.022                                                                       ;
+; Data Required Time ; 3.933                                                                       ;
+; Slack              ; -3.089 (VIOLATED)                                                           ;
++--------------------+-----------------------------------------------------------------------------+
+
++--------------------------------------------------------------------------------------+
+; Statistics                                                                           ;
++---------------------------+-------+-------+-------------+------------+-------+-------+
+; Property                  ; Value ; Count ; Total Delay ; % of Total ; Min   ; Max   ;
++---------------------------+-------+-------+-------------+------------+-------+-------+
+; Setup Relationship        ; 1.000 ;       ;             ;            ;       ;       ;
+; Clock Skew                ; 0.000 ;       ;             ;            ;       ;       ;
+; Data Delay                ; 4.127 ;       ;             ;            ;       ;       ;
+; Number of Logic Levels    ;       ; 4     ;             ;            ;       ;       ;
+; Physical Delays           ;       ;       ;             ;            ;       ;       ;
+;  Arrival Path             ;       ;       ;             ;            ;       ;       ;
+;   Clock                   ;       ;       ;             ;            ;       ;       ;
+;    Clock Network (Lumped) ;       ; 1     ; 2.895       ; 100        ; 2.895 ; 2.895 ;
+;   Data                    ;       ;       ;             ;            ;       ;       ;
+;    IC                     ;       ; 5     ; 1.943       ; 47         ; 0.269 ; 0.612 ;
+;    Cell                   ;       ; 6     ; 1.907       ; 46         ; 0.000 ; 0.580 ;
+;    uTco                   ;       ; 1     ; 0.277       ; 6          ; 0.277 ; 0.277 ;
+;  Required Path            ;       ;       ;             ;            ;       ;       ;
+;   Clock                   ;       ;       ;             ;            ;       ;       ;
+;    Clock Network (Lumped) ;       ; 1     ; 2.895       ; 100        ; 2.895 ; 2.895 ;
++---------------------------+-------+-------+-------------+------------+-------+-------+
+Note: Negative delays are omitted from totals when calculating percentages
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Data Arrival Path                                                                                                                         ;
++---------+---------+----+------+--------+--------------------+-----------------------------------------------------------------------------+
+; Total   ; Incr    ; RF ; Type ; Fanout ; Location           ; Element                                                                     ;
++---------+---------+----+------+--------+--------------------+-----------------------------------------------------------------------------+
+; 0.000   ; 0.000   ;    ;      ;        ;                    ; launch edge time                                                            ;
+; 2.895   ; 2.895   ;    ;      ;        ;                    ; clock path                                                                  ;
+;   2.895 ;   2.895 ; R  ;      ;        ;                    ; clock network delay                                                         ;
+; 7.022   ; 4.127   ;    ;      ;        ;                    ; data path                                                                   ;
+;   3.172 ;   0.277 ;    ; uTco ; 1      ; LCFF_X47_Y28_N23   ; UARTS:u_uw_uart_u_uarts|modgen_counter_11_0:modgen_counter_RxDiv|nx3957z1   ;
+;   3.172 ;   0.000 ; FF ; CELL ; 3      ; LCFF_X47_Y28_N23   ; u_uw_uart_u_uarts|modgen_counter_RxDiv|reg_q_10_|regout                     ;
+;   3.784 ;   0.612 ; FF ; IC   ; 1      ; LCCOMB_X48_Y28_N30 ; u_uw_uart_u_uarts|ix34394z52927|datab                                       ;
+;   4.234 ;   0.450 ; FR ; CELL ; 1      ; LCCOMB_X48_Y28_N30 ; u_uw_uart_u_uarts|ix34394z52927|combout                                     ;
+;   4.696 ;   0.462 ; RR ; IC   ; 1      ; LCCOMB_X47_Y28_N26 ; u_uw_uart_u_uarts|ix34394z52926|datad                                       ;
+;   4.874 ;   0.178 ; RR ; CELL ; 1      ; LCCOMB_X47_Y28_N26 ; u_uw_uart_u_uarts|ix34394z52926|combout                                     ;
+;   5.172 ;   0.298 ; RR ; IC   ; 1      ; LCCOMB_X47_Y28_N28 ; u_uw_uart_u_uarts|ix34394z52924|datab                                       ;
+;   5.693 ;   0.521 ; RR ; CELL ; 2      ; LCCOMB_X47_Y28_N28 ; u_uw_uart_u_uarts|ix34394z52924|combout                                     ;
+;   5.995 ;   0.302 ; RR ; IC   ; 1      ; LCCOMB_X47_Y28_N30 ; u_uw_uart_u_uarts|ix65151z52923|datad                                       ;
+;   6.173 ;   0.178 ; RR ; CELL ; 11     ; LCCOMB_X47_Y28_N30 ; u_uw_uart_u_uarts|ix65151z52923|combout                                     ;
+;   6.442 ;   0.269 ; RR ; IC   ; 1      ; LCFF_X47_Y28_N13   ; u_uw_uart_u_uarts|modgen_counter_RxDiv|reg_q_5_|sclr                        ;
+;   7.022 ;   0.580 ; RF ; CELL ; 1      ; LCFF_X47_Y28_N13   ; UARTS:u_uw_uart_u_uarts|modgen_counter_11_0:modgen_counter_RxDiv|nx17096z11 ;
++---------+---------+----+------+--------+--------------------+-----------------------------------------------------------------------------+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Data Required Path                                                                                                                      ;
++---------+---------+----+------+--------+------------------+-----------------------------------------------------------------------------+
+; Total   ; Incr    ; RF ; Type ; Fanout ; Location         ; Element                                                                     ;
++---------+---------+----+------+--------+------------------+-----------------------------------------------------------------------------+
+; 1.000   ; 1.000   ;    ;      ;        ;                  ; latch edge time                                                             ;
+; 3.895   ; 2.895   ;    ;      ;        ;                  ; clock path                                                                  ;
+;   3.895 ;   2.895 ; R  ;      ;        ;                  ; clock network delay                                                         ;
+; 3.933   ; 0.038   ;    ; uTsu ; 1      ; LCFF_X47_Y28_N13 ; UARTS:u_uw_uart_u_uarts|modgen_counter_11_0:modgen_counter_RxDiv|nx17096z11 ;
++---------+---------+----+------+--------+------------------+-----------------------------------------------------------------------------+
+
+

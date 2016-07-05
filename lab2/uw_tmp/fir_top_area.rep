@@ -1,0 +1,50 @@
+***********************************************
+Device Utilization for EP2C35F672C
+***********************************************
+Resource                Used    Avail   Utilization
+-----------------------------------------------
+IOs                     113     475      23.79%
+LUTs                    201     33216     0.61%
+Registers               78      33216     0.23%
+Memory Bits             768     483340    0.16%
+DSP block 9-bit elems   0       70        0.00%
+
+-----------------------------------------------
+
+********************************************
+
+Library: work    Cell: fir_top    View: main
+
+********************************************
+
+  Cell                     Library  References     Total Area
+
+ GND                       cycloneii     1 x
+ NOT                       cycloneii     1 x
+ TRI                       cycloneii     1 x      1      1 TRIs
+ VCC                       cycloneii     1 x
+ add_9_0                   OPERATORS     1 x      9      9 LUTs
+ altpll                    cycloneii     1 x
+ altsyncram_12_6_64_2_0    OPERATORS     1 x
+ cycloneii_io              cycloneii    98 x      1     98 IOs
+ cycloneii_lcell_comb      cycloneii    89 x      1     89 LUTs
+ cycloneii_lcell_ff        cycloneii    30 x      1     30 Registers
+ i2c_av_config_notri       work          1 x      0      0 LCs
+                                                 39     39 Registers
+                                                 94     94 LUTs
+ modgen_counter_9_0        OPERATORS     1 x      9      9 LUTs
+                                                  9      9 Registers
+
+ Number of ports :                     114
+ Number of nets :                      263
+ Number of instances :                 226
+ Number of references to this view :     0
+
+Total accumulated area : 
+ Number of IOs :                       113
+ Number of LCs :                         0
+ Number of LUTs :                      201
+ Number of Memory Bits :               768
+ Number of Registers :                  78
+ Number of TRIs :                        1
+ Number of accumulated instances :     397

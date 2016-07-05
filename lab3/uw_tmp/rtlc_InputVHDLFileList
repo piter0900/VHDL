@@ -1,0 +1,4 @@
+work "Z:/ECE327/lab3/mem.vhd"
+work "Z:/ECE327/lab3/lab3.vhd"
+work "Z:/ECE327/lab3/lib_lab3.vhd"
+work "Z:/ECE327/lab3/top_lab3.vhd"

@@ -1,0 +1,103 @@
+Quartus II
+Version 10.1 Build 197 01/19/2011 Service Pack 1 SJ Full Version
+14
+4554
+OFF
+OFF
+OFF
+ON
+ON
+ON
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+top_lab3
+# storage
+db|top_lab3.(0).cnf
+db|top_lab3.(0).cnf
+# case_insensitive
+# source_file
+top_lab3_logic.edf
+b62f60c565a334e6b2652f118f208f1d
+10
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# entity
+modgen_counter_16_0
+# storage
+db|top_lab3.(1).cnf
+db|top_lab3.(1).cnf
+# case_insensitive
+# source_file
+top_lab3_logic.edf
+b62f60c565a334e6b2652f118f208f1d
+10
+# hierarchies {
+modgen_counter_16_0:u_uw_uart_modgen_counter_waitcount
+}
+# macro_sequence
+
+# end
+# entity
+UARTS
+# storage
+db|top_lab3.(2).cnf
+db|top_lab3.(2).cnf
+# case_insensitive
+# source_file
+top_lab3_logic.edf
+b62f60c565a334e6b2652f118f208f1d
+10
+# hierarchies {
+UARTS:u_uw_uart_u_uarts
+}
+# macro_sequence
+
+# end
+# entity
+modgen_counter_11_0
+# storage
+db|top_lab3.(3).cnf
+db|top_lab3.(3).cnf
+# case_insensitive
+# source_file
+top_lab3_logic.edf
+b62f60c565a334e6b2652f118f208f1d
+10
+# hierarchies {
+UARTS:u_uw_uart_u_uarts|modgen_counter_11_0:modgen_counter_RxDiv
+}
+# macro_sequence
+
+# end
+# entity
+modgen_counter_12_0
+# storage
+db|top_lab3.(4).cnf
+db|top_lab3.(4).cnf
+# case_insensitive
+# source_file
+top_lab3_logic.edf
+b62f60c565a334e6b2652f118f208f1d
+10
+# hierarchies {
+UARTS:u_uw_uart_u_uarts|modgen_counter_12_0:modgen_counter_TxDiv
+}
+# macro_sequence
+
+# end
+# complete
+

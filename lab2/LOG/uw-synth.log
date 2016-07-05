@@ -1,0 +1,716 @@
+INFO: Starting PRECISION_RTL for logic synthesis
+precision: Executing on platform: CentOS release 5.11 (Final) Kernel \r on an \m  Linux ecelinux5.uwaterloo.ca 2.6.18-404.el5 #1 SMP Tue Apr 7 12:42:54 EDT 2015 x86_64 x86_64 x86_64 GNU/Linux 
+precision: Setting MGC_HOME to /opt/Precision_Synthesis_2008a.47/Mgc_home ...
+Note: Defaulting to use the Next Generation GUI.
+//  Precision RTL Synthesis 2008a.47 (Production Release) Tue Dec  9 03:06:25 PST 2008
+//  
+//  Copyright (c) Mentor Graphics Corporation, 1996-2008, All Rights Reserved.
+//             Portions copyright 1991-2004 Compuware Corporation
+//                       UNPUBLISHED, LICENSED SOFTWARE.
+//            CONFIDENTIAL AND PROPRIETARY INFORMATION WHICH IS THE
+//          PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
+//  
+//  Running on Linux y22lai@ecelinux5.uwaterloo.ca #1 SMP Tue Apr 7 12:42:54 EDT 2015 2.6.18-404.el5 x86_64
+//  
+//  Start time Sun May 31 16:56:12 2015
+-------------------------------------------------
+Info: Logging session transcript to file precision.log
+Info: Results directory: uw_tmp/
+Info: Moving session transcript to file uw_tmp/precision.log
+Info:  Setting up the design to use synthesis library "cycloneii.syn"
+Info: The global max fanout is currently set to 1000 for Altera - Cyclone II.
+Info:  Setting Part to: "EP2C35F672C"
+Info:  Setting Process to: "7"
+Info: USING DESIGN ARCH
+Info: Reading file: /opt/Precision_Synthesis_2008a.47/Mgc_home/pkgs/psr/techlibs/cycloneii.syn.
+Info: Loading library initialization file /opt/Precision_Synthesis_2008a.47/Mgc_home/pkgs/psr/userware/yeager_rename.tcl
+Info: vhdlorder, Release 2008a.22
+Info: Files sorted successfully.
+Info: hdl-analyze, Release RTLC-Precision 2008a.22
+INFO: Analyzing "fir_synth_pkg.vhd"
+INFO: Analyzing "fir.vhd"
+Info: Current working directory: uw_tmp/.
+Info: RTLC-Driver, Release RTLC-Precision 2008a.22
+Info: Last compiled on Nov 27 2008 12:40:04
+Info: Initializing...
+Info: Partitioning design ....
+
+Info: RTLCompiler, Release RTLC-Precision 2008a.22
+Info: Last compiled on Nov 27 2008 12:46:53
+Info: Initializing...
+Info: Root Module work.fir(avg): Pre-processing...
+Info: Root Module work.fir(avg): Compiling...
+Warning: "fir.vhd", line 14: Net i_data[1:0] is unused after optimization
+Info: Compilation successfully completed.
+Info: Total CPU time taken for compilation: 0.0 secs.
+Info: Total lines of RTL compiled: 50.
+Info: Overall running time 0.0 secs.
+Info: Current working directory: uw_tmp/.
+Info: Finished compiling design.
+Info: -- Saving the design database in uw_tmp/fir_gate.xdb
+Info: Writing file: uw_tmp/fir_gate.vhd.
+Info: Info, Command 'auto_write' finished successfully
+Info: Current working directory: uw_tmp/.
+Info: Optimizing design view:.work.fir.avg
+Info: -- Quick flow done
+Info: -- Saving the design database in uw_tmp/fir.xdb
+Info: Writing file: uw_tmp/fir.edf.
+Info: Info, Writing xrf file 'uw_tmp/fir.xrf'
+Info: Writing file: uw_tmp/fir.xrf.
+Info: -- Writing file uw_tmp/fir.tcl
+Info: exq_pr_compile_project gen_vcf fir 1
+Info: Finished synthesizing design.
+Info: Total CPU time taken for synthesis: 0.6 secs.
+Info: Overall running time 0.7 secs.
+Info: uw_tmp/precision_tech.sdc
+Info: -- Saving the design database in uw_tmp/fir_logic.xdb
+Info: Writing file: uw_tmp/fir_logic.vhd.
+Info: Info, Writing xrf file 'uw_tmp/fir_logic.xrf'
+Info: Writing file: uw_tmp/fir_logic.xrf.
+Info: Info, Command 'auto_write' finished successfully
+Info: clk
+Info: -- Saving the design database in uw_tmp/fir_logic.xdb
+Info: Writing file: uw_tmp/fir_logic.v.
+Info: Warning, Moving uw_tmp/fir_logic.xrf to uw_tmp/mgc_old_fir_logic.xrf as uw_tmp/fir_logic.xrf exists
+Info: Writing file: uw_tmp/fir_logic.xrf.
+Info: Info, Command 'auto_write' finished successfully
+Info: *** logic synthesis succeeded ***
+Warning: vmap will not overwrite local modelsim.ini.
+Warning: Library already exists at "work-msim".
+Warning: Library already exists at "altera_mf".
+Modifying modelsim.ini
+Warning: Library already exists at "cycloneii".
+Modifying modelsim.ini
+INFO: generic-gate       netlist         written to uw_tmp/fir_gate.vhd
+INFO: generic-gate       area estimate   written to RPT/area_gate.rpt
+INFO: logic-synthesis    netlist         written to uw_tmp/fir_logic.edf
+INFO: logic-synthesis    area estimate   written to RPT/area_logic.rpt
+INFO: logic-synthesis    timing estimate written to RPT/timing_logic.rpt
+INFO: -----------------------------------------------------------------------
+INFO: CRITICAL PATHS (slowest 5 paths, estimated by logic synthesis)
+INFO: 
+INFO: ..........Delays.........
+INFO:  Total  Datapath  Routing          Source              Dest
+INFO: ------  --------  -------   --------------------  ---------------------
+INFO:   7.99     6.60     1.38    reg_tap2(2)/clk       o_data(15)           
+INFO:   7.88     6.50     1.38    reg_tap2(3)/clk       o_data(15)           
+INFO:   7.80     6.42     1.38    reg_tap2(4)/clk       o_data(15)           
+INFO:   7.72     6.34     1.38    reg_tap2(5)/clk       o_data(15)           
+INFO:   7.64     6.26     1.38    reg_tap2(6)/clk       o_data(15)           
+INFO: -----------------------------------------------------------------------
+INFO: Speed on Cyclone II = 125 MHz,  7.99 ns (estimated by logic-synthesis)
+INFO: AREA = 47 cells (47 luts, 42 regs) (estimated by logic-synthesis)
+INFO: Starting QUARTUS for physical synthesis
+Info: *******************************************************************
+Info: Running Quartus II Shell
+    Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
+    Info: Copyright (C) 1991-2009 Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Altera Program License 
+    Info: Subscription Agreement, Altera MegaCore Function License 
+    Info: Agreement, or other applicable license agreement, including, 
+    Info: without limitation, that your use is for the sole purpose of 
+    Info: programming logic devices manufactured by Altera and sold by 
+    Info: Altera or its authorized distributors.  Please refer to the 
+    Info: applicable agreement for further details.
+    Info: Processing started: Sun May 31 16:56:16 2015
+Info: Command: quartus_sh -t uw-chip-synth-quartus.tcl fir
+Info: Quartus(args): fir
+Info: Evaluation of Tcl script uw-chip-synth-quartus.tcl was successful
+Info: Quartus II Shell was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 52 megabytes
+    Info: Processing ended: Sun May 31 16:56:16 2015
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+Info: *******************************************************************
+Info: Running Quartus II Shell
+    Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
+    Info: Copyright (C) 1991-2009 Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Altera Program License 
+    Info: Subscription Agreement, Altera MegaCore Function License 
+    Info: Agreement, or other applicable license agreement, including, 
+    Info: without limitation, that your use is for the sole purpose of 
+    Info: programming logic devices manufactured by Altera and sold by 
+    Info: Altera or its authorized distributors.  Please refer to the 
+    Info: applicable agreement for further details.
+    Info: Processing started: Sun May 31 16:56:16 2015
+Info: Command: quartus_sh -t /home/ece327/lib/pins-NULL.tcl fir
+Info: Quartus(args): fir
+Info: Evaluation of Tcl script /home/ece327/lib/pins-NULL.tcl was successful
+Info: Quartus II Shell was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 50 megabytes
+    Info: Processing ended: Sun May 31 16:56:16 2015
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+Warning: Can't contact license server "7417@maxwell5.uwaterloo.ca" -- this server will be ignored
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
+    Info: Copyright (C) 1991-2009 Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Altera Program License 
+    Info: Subscription Agreement, Altera MegaCore Function License 
+    Info: Agreement, or other applicable license agreement, including, 
+    Info: without limitation, that your use is for the sole purpose of 
+    Info: programming logic devices manufactured by Altera and sold by 
+    Info: Altera or its authorized distributors.  Please refer to the 
+    Info: applicable agreement for further details.
+    Info: Processing started: Sun May 31 16:56:17 2015
+Info: Command: quartus_map fir --source=fir_logic.edf --family=CycloneII
+Info: Found 4 design units, including 4 entities, in source file fir_logic.edf
+    Info: Found entity 1: add_15_0
+    Info: Found entity 2: add_16_0
+    Info: Found entity 3: add_16_1
+    Info: Found entity 4: fir
+Info: Elaborating entity "fir" for the top level hierarchy
+Warning: EDA design entry or synthesis tool was not specified.  Detecting EDA tool "Precision Synthesis" as the tool that generated the EDIF Input File.
+Info: Elaborating entity "add_16_1" for hierarchy "add_16_1:o_data_add16_1"
+Warning: EDA design entry or synthesis tool was not specified.  Detecting EDA tool "Precision Synthesis" as the tool that generated the EDIF Input File.
+Info: Elaborating entity "add_15_0" for hierarchy "add_15_0:sum2_add15_2"
+Warning: EDA design entry or synthesis tool was not specified.  Detecting EDA tool "Precision Synthesis" as the tool that generated the EDIF Input File.
+Info: Elaborating entity "add_16_0" for hierarchy "add_16_0:sum3_add16_0"
+Warning: EDA design entry or synthesis tool was not specified.  Detecting EDA tool "Precision Synthesis" as the tool that generated the EDIF Input File.
+Warning: Design contains 2 input pin(s) that do not drive logic
+    Warning: No output dependent on input pin "i_data[0]"
+    Warning: No output dependent on input pin "i_data[1]"
+Info: Implemented 122 device resources after synthesis - the final resource count might be different
+    Info: Implemented 17 input pins
+    Info: Implemented 16 output pins
+    Info: Implemented 89 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 8 warnings
+    Info: Peak virtual memory: 185 megabytes
+    Info: Processing ended: Sun May 31 16:56:18 2015
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+Warning: Can't contact license server "7417@maxwell5.uwaterloo.ca" -- this server will be ignored
+Info: *******************************************************************
+Info: Running Quartus II Fitter
+    Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
+    Info: Copyright (C) 1991-2009 Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Altera Program License 
+    Info: Subscription Agreement, Altera MegaCore Function License 
+    Info: Agreement, or other applicable license agreement, including, 
+    Info: without limitation, that your use is for the sole purpose of 
+    Info: programming logic devices manufactured by Altera and sold by 
+    Info: Altera or its authorized distributors.  Please refer to the 
+    Info: applicable agreement for further details.
+    Info: Processing started: Sun May 31 16:56:19 2015
+Info: Command: quartus_fit fir --effort=fast --part=EP2C35F672C7
+Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info: Selected device EP2C35F672C7 for design "fir"
+Info: Fitter is performing a Fast Fit compilation, which decreases Fitter effort to reduce compilation time
+Info: Device migration not selected. If you intend to use device migration later, you may need to change the pin assignments as they may be incompatible with other devices
+    Info: Device EP2C50F672C7 is compatible
+    Info: Device EP2C70F672C7 is compatible
+Info: Fitter converted 3 user pins into dedicated programming pins
+    Info: Pin ~ASDO~ is reserved at location E3
+    Info: Pin ~nCSO~ is reserved at location D3
+    Info: Pin ~LVDS150p/nCEO~ is reserved at location AE24
+Warning: No exact pin location assignment(s) for 33 pins of 33 total pins
+    Info: Pin o_data[0] not assigned to an exact location on the device
+    Info: Pin o_data[1] not assigned to an exact location on the device
+    Info: Pin o_data[2] not assigned to an exact location on the device
+    Info: Pin o_data[3] not assigned to an exact location on the device
+    Info: Pin o_data[4] not assigned to an exact location on the device
+    Info: Pin o_data[5] not assigned to an exact location on the device
+    Info: Pin o_data[6] not assigned to an exact location on the device
+    Info: Pin o_data[7] not assigned to an exact location on the device
+    Info: Pin o_data[8] not assigned to an exact location on the device
+    Info: Pin o_data[9] not assigned to an exact location on the device
+    Info: Pin o_data[10] not assigned to an exact location on the device
+    Info: Pin o_data[11] not assigned to an exact location on the device
+    Info: Pin o_data[12] not assigned to an exact location on the device
+    Info: Pin o_data[13] not assigned to an exact location on the device
+    Info: Pin o_data[14] not assigned to an exact location on the device
+    Info: Pin o_data[15] not assigned to an exact location on the device
+    Info: Pin i_data[2] not assigned to an exact location on the device
+    Info: Pin i_data[3] not assigned to an exact location on the device
+    Info: Pin i_data[4] not assigned to an exact location on the device
+    Info: Pin i_data[5] not assigned to an exact location on the device
+    Info: Pin i_data[6] not assigned to an exact location on the device
+    Info: Pin i_data[7] not assigned to an exact location on the device
+    Info: Pin i_data[8] not assigned to an exact location on the device
+    Info: Pin i_data[9] not assigned to an exact location on the device
+    Info: Pin i_data[10] not assigned to an exact location on the device
+    Info: Pin i_data[11] not assigned to an exact location on the device
+    Info: Pin i_data[12] not assigned to an exact location on the device
+    Info: Pin i_data[13] not assigned to an exact location on the device
+    Info: Pin i_data[14] not assigned to an exact location on the device
+    Info: Pin i_data[15] not assigned to an exact location on the device
+    Info: Pin clk not assigned to an exact location on the device
+    Info: Pin i_data[0] not assigned to an exact location on the device
+    Info: Pin i_data[1] not assigned to an exact location on the device
+Info: Fitter is using the Classic Timing Analyzer
+Info: Timing requirements not specified -- optimizing circuit to achieve the following default global requirements
+    Info: Assuming a global fmax requirement of 1000 MHz
+    Info: Not setting a global tsu requirement
+    Info: Not setting a global tco requirement
+    Info: Not setting a global tpd requirement
+Info: Automatically promoted node clk (placed in PIN P2 (CLK2, LVDSCLK1p, Input))
+    Info: Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G3
+Info: Starting register packing
+Info: Finished register packing
+    Extra Info: No registers were packed into other blocks
+Info: Statistics of I/O pins that need to be placed that use the same VCCIO and VREF, before I/O pin placement
+    Info: Number of I/O pins in group: 32 (unused VREF, 3.3V VCCIO, 16 input, 16 output, 0 bidirectional)
+        Info: I/O standards used: 3.3-V LVTTL.
+Info: I/O bank details before I/O pin placement
+    Info: Statistics of I/O banks
+        Info: I/O bank number 1 does not use VREF pins and has undetermined VCCIO pins. 1 total pin(s) used --  63 pins available
+        Info: I/O bank number 2 does not use VREF pins and has undetermined VCCIO pins. 2 total pin(s) used --  57 pins available
+        Info: I/O bank number 3 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  56 pins available
+        Info: I/O bank number 4 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  58 pins available
+        Info: I/O bank number 5 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  65 pins available
+        Info: I/O bank number 6 does not use VREF pins and has undetermined VCCIO pins. 1 total pin(s) used --  58 pins available
+        Info: I/O bank number 7 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  58 pins available
+        Info: I/O bank number 8 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  56 pins available
+Info: Fitter preparation operations ending: elapsed time is 00:00:00
+Info: Fitter placement preparation operations beginning
+Info: Fitter placement preparation operations ending: elapsed time is 00:00:00
+Info: Fitter placement operations beginning
+Info: Fitter placement was successful
+Info: Fitter placement operations ending: elapsed time is 00:00:01
+Info: Slack time is -2.599 ns between source register "tap1_3_" and destination register "tap2_3_"
+    Info: + Largest register to register requirement is 1.196 ns
+    Info:   Shortest clock path from clock "clk" to destination register is 2.672 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.783 ns) = 0.783 ns; Loc. = Unassigned; Fanout = 1; CLK Node = 'clk'
+        Info: 2: + IC(0.176 ns) + CELL(0.000 ns) = 0.959 ns; Loc. = Unassigned; Fanout = 56; COMB Node = 'clk~clkctrl'
+        Info: 3: + IC(1.111 ns) + CELL(0.602 ns) = 2.672 ns; Loc. = Unassigned; Fanout = 3; REG Node = 'tap2_3_'
+        Info: Total cell delay = 1.385 ns ( 51.83 % )
+        Info: Total interconnect delay = 1.287 ns ( 48.17 % )
+    Info:   Longest clock path from clock "clk" to destination register is 2.672 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.783 ns) = 0.783 ns; Loc. = Unassigned; Fanout = 1; CLK Node = 'clk'
+        Info: 2: + IC(0.176 ns) + CELL(0.000 ns) = 0.959 ns; Loc. = Unassigned; Fanout = 56; COMB Node = 'clk~clkctrl'
+        Info: 3: + IC(1.111 ns) + CELL(0.602 ns) = 2.672 ns; Loc. = Unassigned; Fanout = 3; REG Node = 'tap2_3_'
+        Info: Total cell delay = 1.385 ns ( 51.83 % )
+        Info: Total interconnect delay = 1.287 ns ( 48.17 % )
+    Info:   Shortest clock path from clock "clk" to source register is 2.357 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.783 ns) = 0.783 ns; Loc. = Unassigned; Fanout = 1; CLK Node = 'clk'
+        Info: 2: + IC(0.176 ns) + CELL(0.000 ns) = 0.959 ns; Loc. = Unassigned; Fanout = 56; COMB Node = 'clk~clkctrl'
+        Info: 3: + IC(1.111 ns) + CELL(0.287 ns) = 2.357 ns; Loc. = Unassigned; Fanout = 3; REG Node = 'tap1_3_'
+        Info: Total cell delay = 1.070 ns ( 45.40 % )
+        Info: Total interconnect delay = 1.287 ns ( 54.60 % )
+    Info:   Longest clock path from clock "clk" to source register is 2.357 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.783 ns) = 0.783 ns; Loc. = Unassigned; Fanout = 1; CLK Node = 'clk'
+        Info: 2: + IC(0.176 ns) + CELL(0.000 ns) = 0.959 ns; Loc. = Unassigned; Fanout = 56; COMB Node = 'clk~clkctrl'
+        Info: 3: + IC(1.111 ns) + CELL(0.287 ns) = 2.357 ns; Loc. = Unassigned; Fanout = 3; REG Node = 'tap1_3_'
+        Info: Total cell delay = 1.070 ns ( 45.40 % )
+        Info: Total interconnect delay = 1.287 ns ( 54.60 % )
+    Info:   Micro clock to output delay of source is 0.157 ns
+    Info:   Micro setup delay of destination is -0.038 ns
+    Info: - Longest register to register delay is 3.795 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.501 ns) = 0.501 ns; Loc. = Unassigned; Fanout = 3; REG Node = 'tap1_3_'
+        Info: 2: + IC(3.198 ns) + CELL(0.096 ns) = 3.795 ns; Loc. = Unassigned; Fanout = 3; REG Node = 'tap2_3_'
+        Info: Total cell delay = 0.597 ns ( 15.73 % )
+        Info: Total interconnect delay = 3.198 ns ( 84.27 % )
+Info: Estimated most critical path is register to register delay of 3.795 ns
+    Info: 1: + IC(0.000 ns) + CELL(0.501 ns) = 0.501 ns; Loc. = IOC_X0_Y28_N0; Fanout = 3; REG Node = 'tap1_3_'
+    Info: 2: + IC(3.198 ns) + CELL(0.096 ns) = 3.795 ns; Loc. = LAB_X60_Y28; Fanout = 3; REG Node = 'tap2_3_'
+    Info: Total cell delay = 0.597 ns ( 15.73 % )
+    Info: Total interconnect delay = 3.198 ns ( 84.27 % )
+Info: Fitter routing operations beginning
+Info: Average interconnect usage is 0% of the available device resources
+    Info: Peak interconnect usage is 2% of the available device resources in the region that extends from location X55_Y24 to location X65_Y36
+Info: Fitter routing operations ending: elapsed time is 00:00:05
+Info: Started post-fitting delay annotation
+Warning: Found 16 output pins without output pin load capacitance assignment
+    Info: Pin "o_data[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "o_data[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "o_data[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "o_data[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "o_data[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "o_data[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "o_data[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "o_data[7]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "o_data[8]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "o_data[9]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "o_data[10]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "o_data[11]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "o_data[12]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "o_data[13]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "o_data[14]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info: Pin "o_data[15]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+Info: Delay annotation completed successfully
+Warning: The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
+Info: Quartus II Fitter was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 315 megabytes
+    Info: Processing ended: Sun May 31 16:56:30 2015
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:11
+Warning: Can't contact license server "7417@maxwell5.uwaterloo.ca" -- this server will be ignored
+Info: *******************************************************************
+Info: Running Quartus II TimeQuest Timing Analyzer
+    Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
+    Info: Copyright (C) 1991-2009 Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Altera Program License 
+    Info: Subscription Agreement, Altera MegaCore Function License 
+    Info: Agreement, or other applicable license agreement, including, 
+    Info: without limitation, that your use is for the sole purpose of 
+    Info: programming logic devices manufactured by Altera and sold by 
+    Info: Altera or its authorized distributors.  Please refer to the 
+    Info: applicable agreement for further details.
+    Info: Processing started: Sun May 31 16:56:31 2015
+Info: Command: quartus_sta -t uw-chip-synth-quartus-timing.tcl fir
+Info: Quartus(args): fir
+Info: Detected changes in Quartus II Settings File (.qsf).
+    Info: Assignment USE_TIMEQUEST_TIMING_ANALYZER changed value from OFF to ON.
+Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info: No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info: Deriving Clocks
+    Info: create_clock -period 1.000 -name clk clk
+Info: Fmax Summary
+    Info:                Restricted
+    Info:         Fmax         Fmax      Clock Note
+    Info: ============ ============ ========== =====================
+    Info:   321.03 MHz   321.03 MHz        clk   
+Info: Report Timing: Found 5 setup paths (5 violated).  Worst case slack is -2.115
+    Info: -setup
+    Info: -npaths 5
+    Info: -detail path_only
+    Info: -file {timing_chip_path.rpt}
+Info: Report Timing: Found 5 setup paths (5 violated).  Worst case slack is -2.115
+    Info: -setup
+    Info: -npaths 5
+    Info: -detail path_only
+Info: Path #1: Setup slack is -2.115 (VIOLATED)
+    Info: ===================================================================
+    Info: From Node    : tap1_3_
+    Info: To Node      : tap2_3_
+    Info: Launch Clock : clk
+    Info: Latch Clock  : clk
+    Info: 
+    Info: Data Arrival Path:
+    Info: 
+    Info: Total (ns)  Incr (ns)     Type  Element
+    Info: ==========  ========= ==  ====  ===================================
+    Info:      0.000      0.000           launch edge time
+    Info:      2.697      2.697  R        clock network delay
+    Info:      2.855      0.158     uTco  tap1_3_
+    Info:      3.358      0.503 RR  CELL  i_data_ibuf_3_|regout
+    Info:      5.639      2.281 RR    IC  reg_tap2_3_|sdata
+    Info:      6.052      0.413 RR  CELL  tap2_3_
+    Info: 
+    Info: Data Required Path:
+    Info: 
+    Info: Total (ns)  Incr (ns)     Type  Element
+    Info: ==========  ========= ==  ====  ===================================
+    Info:      1.000      1.000           latch edge time
+    Info:      3.899      2.899  R        clock network delay
+    Info:      3.937      0.038     uTsu  tap2_3_
+    Info: 
+    Info: Data Arrival Time  :     6.052
+    Info: Data Required Time :     3.937
+    Info: Slack              :    -2.115 (VIOLATED)
+    Info: ===================================================================
+    Info: 
+Info: Path #2: Setup slack is -2.001 (VIOLATED)
+    Info: ===================================================================
+    Info: From Node    : tap1_10_
+    Info: To Node      : tap2_10_
+    Info: Launch Clock : clk
+    Info: Latch Clock  : clk
+    Info: 
+    Info: Data Arrival Path:
+    Info: 
+    Info: Total (ns)  Incr (ns)     Type  Element
+    Info: ==========  ========= ==  ====  ===================================
+    Info:      0.000      0.000           launch edge time
+    Info:      2.889      2.889  R        clock network delay
+    Info:      3.046      0.157     uTco  tap1_10_
+    Info:      3.547      0.501 RR  CELL  i_data_ibuf_10_|regout
+    Info:      5.525      1.978 RR    IC  reg_tap2_10_|sdata
+    Info:      5.938      0.413 RR  CELL  tap2_10_
+    Info: 
+    Info: Data Required Path:
+    Info: 
+    Info: Total (ns)  Incr (ns)     Type  Element
+    Info: ==========  ========= ==  ====  ===================================
+    Info:      1.000      1.000           latch edge time
+    Info:      3.899      2.899  R        clock network delay
+    Info:      3.937      0.038     uTsu  tap2_10_
+    Info: 
+    Info: Data Arrival Time  :     5.938
+    Info: Data Required Time :     3.937
+    Info: Slack              :    -2.001 (VIOLATED)
+    Info: ===================================================================
+    Info: 
+Info: Path #3: Setup slack is -1.975 (VIOLATED)
+    Info: ===================================================================
+    Info: From Node    : tap1_12_
+    Info: To Node      : tap2_12_
+    Info: Launch Clock : clk
+    Info: Latch Clock  : clk
+    Info: 
+    Info: Data Arrival Path:
+    Info: 
+    Info: Total (ns)  Incr (ns)     Type  Element
+    Info: ==========  ========= ==  ====  ===================================
+    Info:      0.000      0.000           launch edge time
+    Info:      2.890      2.890  R        clock network delay
+    Info:      3.047      0.157     uTco  tap1_12_
+    Info:      3.548      0.501 RR  CELL  i_data_ibuf_12_|regout
+    Info:      5.499      1.951 RR    IC  reg_tap2_12_|sdata
+    Info:      5.912      0.413 RR  CELL  tap2_12_
+    Info: 
+    Info: Data Required Path:
+    Info: 
+    Info: Total (ns)  Incr (ns)     Type  Element
+    Info: ==========  ========= ==  ====  ===================================
+    Info:      1.000      1.000           latch edge time
+    Info:      3.899      2.899  R        clock network delay
+    Info:      3.937      0.038     uTsu  tap2_12_
+    Info: 
+    Info: Data Arrival Time  :     5.912
+    Info: Data Required Time :     3.937
+    Info: Slack              :    -1.975 (VIOLATED)
+    Info: ===================================================================
+    Info: 
+Info: Path #4: Setup slack is -1.677 (VIOLATED)
+    Info: ===================================================================
+    Info: From Node    : tap1_4_
+    Info: To Node      : tap2_4_
+    Info: Launch Clock : clk
+    Info: Latch Clock  : clk
+    Info: 
+    Info: Data Arrival Path:
+    Info: 
+    Info: Total (ns)  Incr (ns)     Type  Element
+    Info: ==========  ========= ==  ====  ===================================
+    Info:      0.000      0.000           launch edge time
+    Info:      2.855      2.855  R        clock network delay
+    Info:      3.012      0.157     uTco  tap1_4_
+    Info:      3.513      0.501 RR  CELL  i_data_ibuf_4_|regout
+    Info:      5.201      1.688 RR    IC  reg_tap2_4_|sdata
+    Info:      5.614      0.413 RR  CELL  tap2_4_
+    Info: 
+    Info: Data Required Path:
+    Info: 
+    Info: Total (ns)  Incr (ns)     Type  Element
+    Info: ==========  ========= ==  ====  ===================================
+    Info:      1.000      1.000           latch edge time
+    Info:      3.899      2.899  R        clock network delay
+    Info:      3.937      0.038     uTsu  tap2_4_
+    Info: 
+    Info: Data Arrival Time  :     5.614
+    Info: Data Required Time :     3.937
+    Info: Slack              :    -1.677 (VIOLATED)
+    Info: ===================================================================
+    Info: 
+Info: Path #5: Setup slack is -1.360 (VIOLATED)
+    Info: ===================================================================
+    Info: From Node    : tap1_14_
+    Info: To Node      : tap2_14_
+    Info: Launch Clock : clk
+    Info: Latch Clock  : clk
+    Info: 
+    Info: Data Arrival Path:
+    Info: 
+    Info: Total (ns)  Incr (ns)     Type  Element
+    Info: ==========  ========= ==  ====  ===================================
+    Info:      0.000      0.000           launch edge time
+    Info:      2.737      2.737  R        clock network delay
+    Info:      2.895      0.158     uTco  tap1_14_
+    Info:      3.398      0.503 RR  CELL  i_data_ibuf_14_|regout
+    Info:      4.884      1.486 RR    IC  reg_tap2_14_|sdata
+    Info:      5.297      0.413 RR  CELL  tap2_14_
+    Info: 
+    Info: Data Required Path:
+    Info: 
+    Info: Total (ns)  Incr (ns)     Type  Element
+    Info: ==========  ========= ==  ====  ===================================
+    Info:      1.000      1.000           latch edge time
+    Info:      3.899      2.899  R        clock network delay
+    Info:      3.937      0.038     uTsu  tap2_14_
+    Info: 
+    Info: Data Arrival Time  :     5.297
+    Info: Data Required Time :     3.937
+    Info: Slack              :    -1.360 (VIOLATED)
+    Info: ===================================================================
+    Info: 
+Info: Evaluation of Tcl script uw-chip-synth-quartus-timing.tcl was successful
+Info: Quartus II TimeQuest Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 143 megabytes
+    Info: Processing ended: Sun May 31 16:56:32 2015
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
+Warning: Can't contact license server "7417@maxwell5.uwaterloo.ca" -- this server will be ignored
+Info: *******************************************************************
+Info: Running Quartus II Assembler
+    Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
+    Info: Copyright (C) 1991-2009 Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Altera Program License 
+    Info: Subscription Agreement, Altera MegaCore Function License 
+    Info: Agreement, or other applicable license agreement, including, 
+    Info: without limitation, that your use is for the sole purpose of 
+    Info: programming logic devices manufactured by Altera and sold by 
+    Info: Altera or its authorized distributors.  Please refer to the 
+    Info: applicable agreement for further details.
+    Info: Processing started: Sun May 31 16:56:33 2015
+Info: Command: quartus_asm fir
+Info: Writing out detailed assembly data for power analysis
+Info: Assembler is generating device programming files
+Info: Quartus II Assembler was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 234 megabytes
+    Info: Processing ended: Sun May 31 16:56:39 2015
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:06
+Warning: Can't contact license server "7417@maxwell5.uwaterloo.ca" -- this server will be ignored
+Info: *******************************************************************
+Info: Running Quartus II EDA Netlist Writer
+    Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
+    Info: Copyright (C) 1991-2009 Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Altera Program License 
+    Info: Subscription Agreement, Altera MegaCore Function License 
+    Info: Agreement, or other applicable license agreement, including, 
+    Info: without limitation, that your use is for the sole purpose of 
+    Info: programming logic devices manufactured by Altera and sold by 
+    Info: Altera or its authorized distributors.  Please refer to the 
+    Info: applicable agreement for further details.
+    Info: Processing started: Sun May 31 16:56:40 2015
+Info: Command: quartus_eda fir --simulation=on --tool=modelsim --format=vhdl
+Info: Generated files "fir.vho" and "fir_vhd.sdo" in directory "simulation/modelsim/" for EDA simulation tool
+Info: Quartus II EDA Netlist Writer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 166 megabytes
+    Info: Processing ended: Sun May 31 16:56:41 2015
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
+Warning: Can't contact license server "7417@maxwell5.uwaterloo.ca" -- this server will be ignored
+Info: *******************************************************************
+Info: Running Quartus II EDA Netlist Writer
+    Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
+    Info: Copyright (C) 1991-2009 Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Altera Program License 
+    Info: Subscription Agreement, Altera MegaCore Function License 
+    Info: Agreement, or other applicable license agreement, including, 
+    Info: without limitation, that your use is for the sole purpose of 
+    Info: programming logic devices manufactured by Altera and sold by 
+    Info: Altera or its authorized distributors.  Please refer to the 
+    Info: applicable agreement for further details.
+    Info: Processing started: Sun May 31 16:56:42 2015
+Info: Command: quartus_eda fir --simulation=on --tool=modelsim --format=verilog
+Info: Generated files "fir.vo" and "fir_v.sdo" in directory "simulation/modelsim/" for EDA simulation tool
+Info: Quartus II EDA Netlist Writer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 166 megabytes
+    Info: Processing ended: Sun May 31 16:56:42 2015
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+Warning: vmap will not overwrite local modelsim.ini.
+Warning: Library already exists at "work-msim".
+Warning: Library already exists at "altera_mf".
+Modifying modelsim.ini
+Warning: Library already exists at "cycloneii".
+Modifying modelsim.ini
+Model Technology ModelSim SE-64 vlog 10.1 Compiler 2011.12 Dec  5 2011
+-- Compiling module fir
+-- Compiling module add_15_0
+-- Compiling module add_16_1
+-- Compiling module add_16_0
+
+Top level modules:
+	fir
+Warning: vmap will not overwrite local modelsim.ini.
+Warning: Library already exists at "work-msim".
+DEBUG: modelsim_pfx: testing: /opt/ModelSim101/modeltech/bin/
+DEBUG: try_set: altera_sim_lib: True: /home/ece327/altera
+DEBUG: default_board: DE2
+** Warning: (vlib-34) Library already exists at "work-msim".
+** Warning: (vlib-34) Library already exists at "work-msim".
+  Model Technology ModelSim SE-64 vcom 10.1 Compiler 2011.12 Dec  5 2011
+Model Technology ModelSim SE-64 vcom 10.1 Compiler 2011.12 Dec  5 2011
+-- Loading package STANDARD
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package NUMERIC_STD
+-- Compiling package fir_synth_pkg
+-- Compiling package fir_synth_pkg
+-- Compiling package body fir_synth_pkg
+-- Compiling package body fir_synth_pkg
+-- Loading package fir_synth_pkg
+-- Loading package fir_synth_pkg
+-- Loading package fir_synth_pkg
+-- Loading package fir_synth_pkg
+-- Compiling entity fir
+-- Compiling entity fir
+-- Compiling architecture avg of fir
+-- Compiling architecture avg of fir
+-- Compiling architecture low_pass of fir
+-- Compiling architecture low_pass of fir
+-- Loading entity fir
+-- Loading entity fir
+ 
+Warning: vmap will not overwrite local modelsim.ini.
+Warning: Library already exists at "work-msim".
+DEBUG: modelsim_pfx: testing: /opt/ModelSim101/modeltech/bin/
+DEBUG: try_set: altera_sim_lib: True: /home/ece327/altera
+DEBUG: default_board: DE2
+** Warning: (vlib-34) Library already exists at "work-msim".
+** Warning: (vlib-34) Library already exists at "work-msim".
+  Model Technology ModelSim SE-64 vlog 10.1 Compiler 2011.12 Dec  5 2011
+Model Technology ModelSim SE-64 vlog 10.1 Compiler 2011.12 Dec  5 2011
+-- Compiling module fir_chip
+-- Compiling module fir_chip
+
+
+Top level modules:
+Top level modules:
+	fir_chip
+	fir_chip
+ 
+Warning: vmap will not overwrite local modelsim.ini.
+Warning: Library already exists at "work-msim".
+INFO: generic-gate       netlist         written to uw_tmp/fir_gate.vhd
+INFO: generic-gate       area estimate   written to RPT/area_gate.rpt
+INFO: logic-synthesis    netlist         written to uw_tmp/fir_logic.edf
+INFO: logic-synthesis    area estimate   written to RPT/area_logic.rpt
+INFO: logic-synthesis    timing estimate written to RPT/timing_logic.rpt
+INFO: chip               netlist         written to uw_tmp/fir_chip.vhd
+INFO: chip               area estimate   written to RPT/area_chip.rpt
+INFO: 
+INFO: ***********************************************
+INFO: *
+INFO: * uw-synth to DE2 was successful
+INFO: * log file stored in LOG/uw-synth.log
+INFO: *
+INFO: ***********************************************
